@@ -1771,9 +1771,10 @@ usually appear as “pieces" within more complicated nonlinear models.
 
 # Overfitting and going nonlinear
 
-Having more data allows us to improve our predictions but can even
-confute some assumptions, e.g. in the following figure, having more data
-confutes the assumption that the distribution of data behaves linearly
+Having more data allows us to improve our predictions but can even 
+invalidate some assumptions, e.g. in the following figure, having more 
+data may reduce how well the linear model fits the data.
+
 
 ![](media/image63.png)
 
