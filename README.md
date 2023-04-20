@@ -5311,7 +5311,7 @@ datapoint):
 - Each data point x is transformed into a low-dimensional **code**
     $z \in R^{k}$, where the dimension k \< d is fixed.
 
-- The **encoding** and **decoding** procedures are linear.
+- The **encoding** and **decoding** procedures are linear, since the matrix multiplications satisfy the propriety of the linear transformations: $L(u + v) = L(u) + L(v)  \land L(a v) = a L(v)$.
 
 How to generalize this idea?
 
