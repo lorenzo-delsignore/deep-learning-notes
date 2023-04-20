@@ -5280,7 +5280,7 @@ $$x_{new} = Wz_{new}$$
 
 ![](media/image289.png)
 
-½ is like taking the average of z1 + z2. But it’s not always the case,
+$\frac{1}{2}$ is like taking the average of z1 + z2. But it’s not always the case,
 we can also get a garbage image. We must do something more powerful. PCA
 is linear, so we are going to add something non-linear that are
 generative models.
