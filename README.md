@@ -5222,6 +5222,8 @@ together, instead the best direction the red dots are spread out onto
 the principal component, so in this sense we say that we are looking to
 maximize the variance of these red dots (projected data).
 
+Minimizing the orthogonal projection error is the same as maximizing the variance of the projected data.
+
 This is an optimization problem.
 
 Assume the data points X are **centred** at zero. For a given w, the
