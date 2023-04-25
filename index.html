@@ -8,18 +8,15 @@
     content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
   <meta name="description" content="DeepLearningNotes">
   <title>DeepLearningNotes</title>
-
   <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
   <link rel="manifest" href="assets/img/site.webmanifest">
-
-  <!-- Theme -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable/dist/css/theme-simple.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
-
   <script src="https://cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 </head>
 
 <body>
@@ -69,7 +66,8 @@
     };
   </script>
   <link rel="stylesheet" href="assets/css/override.css">
-  <script src="https://cdn.jsdelivr.net/npm/docsify"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-latex@0"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-tabs"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-themeable"></script>
@@ -79,7 +77,31 @@
   <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@rakutentech/docsify-code-inline/dist/index.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-katex/dist/docsify-katex.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ["script","noscript","style","textarea"],
+      inlineMath: [['$', '$'], ['`$', '$`'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['`$$', '$$`'], ['\\[', '\\]']]
+    }
+  });
+  MathJax.Hub.Register.LoadHook("[MathJax]/extensions/tex2jax.js", function () {
+    var TEX2JAX = MathJax.Extension.tex2jax;
+    TEX2JAX._createMathTag = TEX2JAX.createMathTag;
+    TEX2JAX.createMathTag = function (mode, tex) {
+      const math = this._createMathTag(mode, tex);
+      const code = math.parentNode;
+      if (code.nodeName === 'CODE' && code.childNodes.length <= 3) {
+        const span = document.createElement('mjx-span');
+        code.parentNode.replaceChild(span, code);
+        span.appendChild(math);
+      }
+      return math;
+    };
+  });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>

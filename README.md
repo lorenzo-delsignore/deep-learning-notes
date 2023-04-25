@@ -4245,7 +4245,7 @@ regularization or providing new ways of regularizing deep networks.
 
 Overfitting often happens with limited training data:
 
-$$\# \ paramters \gg \# \ training examples$$
+$$\# \ parameters \gg \# \ training \ examples$$
 
 Since usually we don't have enough data to be able to increase the
 number of training examples, one of the objectives of regularization is
