@@ -1691,7 +1691,7 @@ We can rewrite that formula with this expression:
 
 We have to compute the partial derivatives in respect to
 $\theta_{1},\ \theta_{2},....\ \theta_{n}$, so I have to compute $n$
-partial derivatives.  
+partial derivatives.
 So, we have to do:
 
 ![](media/image54.png)
@@ -1718,7 +1718,7 @@ And finally this expression can be rewrite as:
 
 If $A$ is symmetric (e.g., $A\  = \ X^{T}X$) then:
 
-![](media/image58.png)  
+![](media/image58.png)
 So we can use these two formulas to compute the partial derivatives, no
 need to re-do all the steps, if you see in the previous expression for
 the previous form we can apply this trick.
@@ -1771,8 +1771,8 @@ usually appear as “pieces" within more complicated nonlinear models.
 
 # Overfitting and going nonlinear
 
-Having more data allows us to improve our predictions but can even 
-invalidate some assumptions, e.g. in the following figure, having more 
+Having more data allows us to improve our predictions but can even
+invalidate some assumptions, e.g. in the following figure, having more
 data may reduce how well the linear model fits the data.
 
 
@@ -2277,7 +2277,7 @@ optimization is known as Gradient descent.
 Gradient descent is a **first-order** iterative minimization algorithm.
 
 It is iterative since it involves a series of iterated computations to
-find the local minimum of a function, given some initial conditions.  
+find the local minimum of a function, given some initial conditions.
 Notice the word local, meaning that we effectively lose any global
 optimality guarantee when entering the domain of non-convex functions.
 These functions have multiple local minima, and GD will converge to one
@@ -2332,8 +2332,8 @@ above) that ends in a local minimum
 
 $$\theta^{(t + 1)} = \ \theta^{(t)}\  - \ \alpha\nabla l_{\theta^{(t)}}\ $$
 
-2. Stop when we meet some conditions that represent the minimum:  
-    - When the gradient is 0  
+2. Stop when we meet some conditions that represent the minimum:
+    - When the gradient is 0
     - Too many iteration
 
 Let’s see now a different view to see this algorithm:
@@ -2577,21 +2577,21 @@ $\alpha\left\| \nabla f \right\|$, that’s the step size.
 ### Decay and momentum
 
 More frequently is done that you choose a big $\alpha$ and then decrease
-it as you proceed.  
+it as you proceed.
 The learning rate can be **adaptive** or follow a **schedule**.
 
 - Decrease $\alpha$ according to a **decay** parameter $p$ (follow a
-    schedule).  
-    Examples.  
+    schedule).
+    Examples.
     Decrease $\alpha$ exponentially (third formula):
 
 ![](media/image116.png)
 
 $\alpha^{(0)}$ is where you start, for t = 0 you have $\alpha^{(0)}$, as
 t increase you get exponentially smaller $\alpha$ values. The speed of
-decrease is governed and controlled by $p$.  
-The first formula:  
-$p$ can go to any range of values, $t$ can go from 0 up to $p$.  
+decrease is governed and controlled by $p$.
+The first formula:
+$p$ can go to any range of values, $t$ can go from 0 up to $p$.
 This is a line going from $\alpha^{(0)}$ to $\alpha^{(p)}$. If we choose
 $\alpha^{(p)}$ to be small than $\alpha^{(0)}$ then it’s a line going
 down otherwise is going to be another direction, it depends on ro.
@@ -2818,7 +2818,7 @@ The algorithm is as follows:
 
 - Pick a mini-batch B
 
-- Update with the downhill step (use momentum if desired:  
+- Update with the downhill step (use momentum if desired:
     $\theta\  \leftarrow \ \theta\  - \ \alpha\nabla l_{\theta}((\{ x_{i},\ y_{i}\})\ $
 
 - Go back to step 2
@@ -3211,7 +3211,7 @@ We want to automatize this **computational** step efficiently.
 
 ## Computational graphs
 
-Consider a generic function $f\mathbb{:\ R \rightarrow R}$.  
+Consider a generic function $f\mathbb{:\ R \rightarrow R}$.
 A **computational graph** is a directed acyclic graph representing the
 computation of $f(x)$ with **intermediate** variables.
 
@@ -3401,7 +3401,7 @@ When training neural nets, we compute the gradient of a loss.
 
 $$l:\ \mathbb{R}^{p}\mathbb{\  \rightarrow R}$$
 
-where p \>\> 1 is the number of **weights**.  
+where p \>\> 1 is the number of **weights**.
 Instead of simple derivatives we must compute **gradients** and
 **Jacobians** (it depends on the dimensions you are working with).
 
@@ -3421,19 +3421,19 @@ $f_{t - 1}$
 
 $\epsilon$ is the MSE, logistic error, or any loss function.
 
-- Forward-mode autodiff:  
+- Forward-mode autodiff:
     you compute the gradient from the input to the output and you store
     the gradient multiply by the previous one and so on. J1 is the first
     gradient we compute and you store it and the you multiply with the
     second one because of the chain rule. This temporary result you
-    store it and then you keep going until the output.  
+    store it and then you keep going until the output.
     ![](media/image169.png)
 
-- Reverse-mode autodiff:  
+- Reverse-mode autodiff:
     Instead first you compute from the output and then you compute
     closer and closer to the input. You multiply the gradients because
     of the chain rule and you store the intermediate result until the
-    end.  
+    end.
 
     ![](media/image170.png)
 
@@ -3453,7 +3453,7 @@ from $\mathbb{R}^{p}\mathbb{\  \rightarrow \ R}$
 For deep learning so reverse mode is the best to go.
 
 We call **back-propagation** the reverse mode automatic differentiation
-applied to deep neural networks.  
+applied to deep neural networks.
 Evaluating $\nabla l$ with backprop is as fast as evaluating $l$.
 
 **Back-propagation is not just the chain rule.**
@@ -3548,7 +3548,7 @@ represent the domain of interest and perform well at the task at hand.
 
 Deep feed-forward networks are provably **universal**. (the theorem we
 described Very simple deep neural networks can approximate any
-continuous function).  
+continuous function).
 However:
 
 - We can make them **arbitrarily complex**.
@@ -3720,7 +3720,7 @@ invariance**.
 
 ## Deformation invariance
 
-Other types of invariances are possible.  
+Other types of invariances are possible.
 Invariance to partiality and isometric deformations:
 
 ![](media/image190.png)
@@ -3769,7 +3769,7 @@ independently from where it is). A CNN will provide us this kind of
 hierarchical features.
 
 So, we said that, data is often composed of **hierarchical, local,
-shift-invariant patterns**.  
+shift-invariant patterns**.
 CNNs directly exploit this fact as a **prior**.
 
 ## Convolution
@@ -4895,7 +4895,7 @@ have a probability that the unit can be removed (“dropout”).
     you enter in a new mini batch you enter in a new network. The
     individual models are **not** trained to convergence because at each
     mini batch the network is done, so not each model is trained until
-    the end.  
+    the end.
     The **ensemble** is trained to convergence (e.g. with early
     stopping). It’s like that at each optimization step you change
     network. Each time you see a mini-batch you change network, it will
@@ -4985,7 +4985,7 @@ learnt distribution approximates the real one.
 Deep generative models are the combination of generative models and deep
 neural networks.
 
-Overall idea:  
+Overall idea:
 Learn a **distribution** from some given training samples and generate
 new samples from the same distribution.
 
@@ -5071,7 +5071,7 @@ lower-dimensional distribution that is as close as possible to the input
 higher-dimensional distribution; therefore, it can be regarded as a
 generative model.
 
-Formally the task of dimensionality reduction is defined as follows.  
+Formally the task of dimensionality reduction is defined as follows.
 Given n datapoints stored as columns of a matrix
 $X\  \in \ \mathbb{R}^{dxn}$ we want a similar representation of the
 matrix X with smaller dimension:
@@ -5510,7 +5510,7 @@ Two neighbourhoods are “homoeomorphic" if there exists a homeomorphism
 between them, i.e. a smooth and invertible mapping from the points of
 the first to the points of the second. Notice that this means that
 points that are “close" on the manifold must be “close" also on the
-corresponding Euclidean space.  
+corresponding Euclidean space.
 Informally, this means that at each point on the manifold, that is a
 curved space, we can locally think to lie on a flat, Euclidean space
 instead. The more we zoom out from the point, the more this
@@ -5688,8 +5688,8 @@ So we said that The decoder
 $D:\mathbb{R}^{k} \rightarrow \ \mathbb{R}^{d}$ is a chart from the
 latent space spanned by the codes z to the data space of the inputs x.
 
-It is differentiable. It is invertible via the encoder E.  
-  
+It is differentiable. It is invertible via the encoder E.
+
 PCA puts the data on a linear (flat, Euclidean space) manifold since D
 simply performs a linear combination of orthogonal vectors (z).
 
@@ -5737,7 +5737,7 @@ corresponding image. Look what it’s happening, the two dimension of the
 latent space capture semantic proprieties of the images. This obtain it
 for free. The autoencoder discover the factor of variation of this data,
 from this data the autoencoder discovered that rotation of the wrist and
-the fingers extension are two factors of variation.  
+the fingers extension are two factors of variation.
 Here you can see it’s not possible to put a latent space isolated from
 the others or put some latent space near to each other.
 
@@ -5756,7 +5756,7 @@ generator. However, it is pretty difficult (if not impossible) to
 ensure, a priori, that the encoder will organize the latent space in a
 smart way compatible with the generative process we just described. It
 could learn arbitrary functions, mapping similar inputs to arbitrarily
-distant regions of the latent space, without coupling.  
+distant regions of the latent space, without coupling.
 This weakness is addressed by Variational Autoencoders, or VAE in short.
 A VAE does not learn a mapping from the data space to the latent space
 and its \inverse", but explicitly constructs the parameters of a
@@ -6617,7 +6617,7 @@ Consider a linear model from input to output:
 
 ![](media/image402.png)
 
-With j I am pointing out one token of the sequence.  
+With j I am pointing out one token of the sequence.
 Imagine we can linearly combine the input tokens to get each output
 token. The weights are $w_{ij}$
 
@@ -7128,7 +7128,7 @@ produced by an adversary. This is an example of a more general concept
 called adversarial training, in which the data samples that are used for
 training are called adversarial examples. They are not just useful for
 training more accurate models, but they can also be used maliciously, to
-fool a model with the sole purpose of making it fail.  
+fool a model with the sole purpose of making it fail.
 The existence of adversarial examples for a model, meaning examples over
 which the model fails when it is not expected to do so, can be an
 indicator of poor robustness of the model: if we can find such
@@ -7205,7 +7205,7 @@ attacker:
 Access to partial information (training data, only the features,
 architecture, etc.).
 
-- **White-box** attack:  
+- **White-box** attack:
     Complete access to the network (architecture, parameters, given the
     mode you can backpropagate to the model etc. but you are not allowed
     to change the parameters or something). You are **not allowed** to
