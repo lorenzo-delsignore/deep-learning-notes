@@ -7513,3 +7513,7 @@ point cloud, we could add or move points in space. There is a whole
 branch of adversarial machine learning that deals with adversarial
 defense: methods and techniques to shield learning models from
 adversarial attacks. Adversarial training is one such method.
+
+# Disclaimer and acknowledgments
+
+I would like to acknowledge that my notes have been influenced by the course [Deep Learning and Applied Artificial Intelligence](https://github.com/erodola/DLAI-s2-2023) and by the [notes](https://raw.githubusercontent.com/erodola/DLAI-s2-2022/main/resources/Course_notes_Crisostomi.pdf) provided by the authors. While I have added my own contributions and interpretations, I have also drawn directly from the original notes in some sections. I wish to credit the authors for their insightful and informative work.
